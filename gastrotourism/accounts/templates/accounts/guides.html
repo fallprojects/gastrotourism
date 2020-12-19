@@ -1,0 +1,17 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<table>
+    <tr>
+        <td>Имя</td>
+        <td>Эл. почта</td>
+        <td>Телефон</td>
+    </tr>
+    {% for guide in guides %}
+    <tr>
+        <td>{{ guide.full_name }}</td>
+        <td>{{ guide.email }}</td>
+        <td>{{ guide.phone }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
