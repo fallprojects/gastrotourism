@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Регистрация</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/loginstyle.css' %}">
+</head>
+<body>
+    <div id="fullscreen_bg" class="fullscreen_bg"/>
+
+        <div class="container">
+
+            <form class="form-signin" method="POST" action="">
+                {% csrf_token %}
+                <h1 class="form-signin-heading text-muted"> Регистрация </h1>
+                <input type="text" class="form-control" placeholder="Email address">
+                <input type="password" class="form-control" placeholder="Password" value="{{form.password1}}">
+                <input type="password" class="form-control" placeholder="Password" value="{{form.password2}}">
+                <input class="btn btn-lg btn-primary btn-block" type="submit" name="submit">
+                <button class="btn btn-lg btn-primary btn-block" type="submit" href="{% url 'login' %}">
+                    Войти
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
+

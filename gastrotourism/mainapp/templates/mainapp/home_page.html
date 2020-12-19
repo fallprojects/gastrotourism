@@ -1,0 +1,9 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+{% for title in titles %}
+    {{ title.title }}
+    <br>
+    {{ title.text }}
+    <br>
+{% endfor %}
+{% endblock %}
