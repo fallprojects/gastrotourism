@@ -2,15 +2,16 @@
 {% block content %}
 <table>
     <tr>
-        <td>Имя</td>
-        <td>Эл. почта</td>
-        <td>Телефон</td>
+        <td>Full Name</td>
+        <td>Email</td>
+        <td>Phone</td>
     </tr>
     {% for customer in customers %}
     <tr>
-        <td>{{ customer.full_name }}</td>
+        <td><a href="{% url 'customers' %}">{{ customer.full_name }}</td>
         <td>{{ customer.email }}</td>
         <td>{{ customer.phone }}</td>
+
     </tr>
     {% endfor %}
 </table>
