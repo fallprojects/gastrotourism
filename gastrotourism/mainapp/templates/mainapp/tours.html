@@ -1,12 +1,13 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
 {% for tour in tours %}
-    <img src="{{tour.image.url}}" width=150px, height=80px>
-    {{tour.name}}
-    <br>
-    {{tour.description}}
-    <br>
-    {{tour.duration}}
-    <br>
+<img src="{{tour.image.url}}" width=150px, height=80px>
+<a href="{%url 'tourorder' tour.id %}">{{tour.name}}</a>
+<br>
+{{tour.description}}
+<br>
+{{tour.duration}}
+<br>
+
 {% endfor %}
 {% endblock %}
