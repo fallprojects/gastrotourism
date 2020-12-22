@@ -1,0 +1,24 @@
+{% extends 'mainapp/base.html'%}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Tour</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Customer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+    <tr>
+        <td scope="row">{{ order.tour.name }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.date_created }}</td>
+        <td> {{ order.customer.full_name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
