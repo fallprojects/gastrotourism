@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .models import *
@@ -54,3 +54,7 @@ def auth(request):
 
     context = {}
     return render(request, 'accounts/login.html', context)
+
+def logout_page(request):
+    logout(request)
+    return redirect('home')
