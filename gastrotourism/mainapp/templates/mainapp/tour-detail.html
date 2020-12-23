@@ -1,0 +1,26 @@
+{% extends 'mainapp/base.html'%}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <td scope="col" style="width:12%">Tour name</td>
+                <td scope="col" style="width:64%">Description</td>
+                <td scope="col" style="width:12%">Options</td>
+                <td scope="col" style="width:12%">Order</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">{{ tour.name }}</td>
+                <td>{{ tour.description}}</td>
+                <td>{{form}}</td>
+                <td><a href="{%url 'tourorder' tour.id %}">Click to order</a></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</form>
+{% endblock %}
