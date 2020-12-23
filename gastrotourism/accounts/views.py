@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import Group
 from django.shortcuts import render, redirect
 from .models import *
 # Create your views here.
@@ -37,6 +38,8 @@ def createUser(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            group = Group.objects.get(name='customer')
+            user.groups.add(group)
             Customer.objects.create(user=user, full_name=user.username)
             user.save()
             return redirect('/')
